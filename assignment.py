@@ -191,5 +191,35 @@ import string
 
 # Monday
 
-book_info = "john doe ; the art of programming ; 2020 ; ISN 978-3-16-148410-0 ; 350 ; 2500"
+book_info = "harper lee ; to kill a mockingbird ; 1960 ; ISN 978-0-06-112008-4 ; 324 ; 2999.4789"
+book_split = book_info.split(";")
+
+author, title, year_published, isn, num, cost = book_split
+format_author = author.title()
+book_title = title.strip().title()
+isbn = isn.replace("ISN", "ISBN")
+cost_format = "#{0:.2f}".format(float(cost))
+print(cost_format)
+print(book_split)
+
+formatted_book_info = f"The book {book_title} was written by {format_author}and published in{year_published}. It has{num}pages and{isbn} and costs {cost_format}"
+print(formatted_book_info)
+
+
+book_info = "george orwell ; 1984 ; 1949 ; ISN 978-0-452-28423-4 ; 328 ; 1999"
+book_info_split = book_info.split(";")
+author, title, year_published, isn, page, cost = book_info_split
+author, title, year_published, isn, page, cost = author.strip(), title.strip(), year_published.strip(), isn.strip(), page.strip(), cost.strip()
+
+format_author = author.title()
+isbn = isn.replace("ISN", "ISBN")
+
+# cost_format = "#{0:.2f}".format(float(cost))
+cost_format = round(float(cost), 2)
+
+formatted_book_info = """The book {} was written by {} and published {}. 
+It has {} pages and {} and costs {}""".format(title, format_author, year_published, page,isbn, cost_format)
+print(formatted_book_info)
+
+
 
