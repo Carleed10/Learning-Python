@@ -17,7 +17,7 @@ countries.remove("Canada")
 print(countries)
 
 # cities = {"New York", "Los Angeles", "Chicago"}
-# cities.remove("Houston")
+# cities.discard("Houston")
 
 
 seasons = ["Spring", "Summer", "Fall", "Winter", "Spring"]
